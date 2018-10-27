@@ -370,7 +370,7 @@ int endTurn(struct gameState *state) {
   state->outpostPlayed = 0;
   state->phase = 0;
   state->numActions = 1;
-  state->coins = 0;
+  state->coins = 0;i
   state->numBuys = 1;
   state->playedCardCount = 0;
   state->handCount[state->whoseTurn] = 0;
