@@ -15,13 +15,13 @@ char inputChar()
 char *inputString()
 {
     char* reset = malloc(6 * sizeof(char));
-    reset[5] = '\0';
     int i;
     for(i = 0; i < 5; i++){
-        int n = (rand() % (116 - 101 + 1)) + 101;
-        char c = (char) n;
-        reset[i] = c;
+        int randNum = (rand() % (116 - 101 + 1)) + 101;
+        char letter = (char) randNum;
+        reset[i] = letter;
     }
+    reset[5] = '\0';
     char *returnStr = reset;
     return returnStr;
 }
