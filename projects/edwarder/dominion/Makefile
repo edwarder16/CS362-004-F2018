@@ -53,7 +53,7 @@ cardtest3: cardtest3.c dominion.o rngs.o
 cardtest4: cardtest4.c dominion.o rngs.o
 	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
 
-myTest:
+unittestresults:
 	echo "unittest1 test:" >> unittestresults.out
 	make unittest1
 	./unittest1 >> unittestresults.out
