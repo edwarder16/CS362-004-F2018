@@ -53,44 +53,37 @@ cardtest3: cardtest3.c dominion.o rngs.o
 cardtest4: cardtest4.c dominion.o rngs.o
 	gcc -o cardtest4 -g  cardtest4.c dominion.o rngs.o $(CFLAGS)
 
-unittestresults:
+
+unittestresults: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 	echo "unittest1 test:" >> unittestresults.out
-	make unittest1
 	./unittest1 >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
 
 	echo "unittest2 test" >> unittestresults.out
-	make unittest2
 	./unittest2 >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
 
 	echo "unittest3 test" >> unittestresults.out
-	make unittest3
 	./unittest3 >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
 
 	echo "unittest4 test:" >> unittestresults.out
-	make unittest4
 	./unittest4 >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
 
 	echo "cardtest1 test" >> unittestresults.out
-	make cardtest1
 	./cardtest1 >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
 
 	echo "cardtest2 test" >> unittestresults.out
-	make cardtest2
 	./cardtest2 >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
 
 	echo "cardtest3 test" >> unittestresults.out
-	make cardtest3
 	./cardtest3 >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
 
 	echo "cardtest4 test" >> unittestresults.out
-	make cardtest4
 	./cardtest4 >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
 
