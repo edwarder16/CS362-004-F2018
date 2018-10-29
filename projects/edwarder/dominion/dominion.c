@@ -370,7 +370,7 @@ int endTurn(struct gameState *state) {
   state->outpostPlayed = 0;
   state->phase = 0;
   state->numActions = 1;
-  state->coins = 0;i
+  state->coins = 0;
   state->numBuys = 1;
   state->playedCardCount = 0;
   state->handCount[state->whoseTurn] = 0;
@@ -643,7 +643,12 @@ int getCost(int cardNumber)
   return -1;
 }
 
-void playAdventurerCard (int currentPlayer, int handPos, struct gameState* state, int drawntreasure, int temphand[], int cardDrawn, int z) {
+void playAdventurerCard (int currentPlayer, int handPos, struct gameState* state) {
+  int cardDrawn;
+  int z;
+  int temphand[MAX_HAND];
+  int drawntreasure;
+
   while(drawntreasure<2){
     if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
       shuffle(currentPlayer, state);
@@ -747,7 +752,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   switch( card )
   {
     case adventurer:
-      playAdventurerCard(currentPlayer, handPos, state, drawntreasure, temphand, cardDrawn, z);
+      playAdventurerCard(currentPlayer, handPos, state);
       return 0;
 
     case council_room:
@@ -1342,7 +1347,6 @@ int updateCoins(int player, struct gameState *state, int bonus)
       state->coins += 3;
     }
   }
-
   //add bonus
   state->coins += bonus;
 
