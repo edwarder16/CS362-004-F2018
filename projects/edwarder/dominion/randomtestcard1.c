@@ -29,7 +29,6 @@ int main () {
     {
         randSeed = rand() % 100 + 1;
         numPlayers = rand() % 4 + 1;
-
         test = initializeGame(numPlayers, k, randSeed, &game);
         for(j = 0; j < numPlayers; j++) {
             hand = rand() % MAX_HAND;
